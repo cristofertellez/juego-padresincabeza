@@ -1,0 +1,34 @@
+# Auto detect text files and perform LF normalization on checkin
+* text=auto eol=lf
+
+# Godot text resources and source files (strict LF)
+*.tscn text eol=lf
+*.tres text eol=lf
+*.gd text eol=lf
+*.gdshader text eol=lf
+*.shader text eol=lf
+*.cfg text eol=lf
+*.godot text eol=lf
+*.uid text eol=lf
+*.import text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+
+# Binary assets (prevent Git line ending corruption)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg binary
+*.webp binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.blend binary
+*.fbx binary
+*.glb binary
+*.gltf text eol=lf
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary

@@ -1,0 +1,122 @@
+{
+  "map_bounds": {
+    "width": 1920,
+    "height": 1080
+  },
+  "landmarks": [
+    {
+      "id": "altar_mayor",
+      "name": "Altar Mayor Dorado",
+      "sprite": "altar_mayor.png",
+      "category": "floor",
+      "layer": "piso_ysort",
+      "position": { "x": 960, "y": 200 },
+      "z_index": 5,
+      "hitbox": {
+        "width": 110,
+        "height": 36,
+        "offset_x": 0,
+        "offset_y": -18
+      },
+      "interaction": {
+        "enabled": true,
+        "radius": 100.0,
+        "action_prompt": "Presiona [E] para inspeccionar",
+        "title": "Altar Mayor de la Catedral de León",
+        "description": "El majestuoso Altar Mayor en estilo barroco dorado. En la parte superior resplandece la imagen de la Asunción de la Virgen María con halos celestiales, coronando el sagrario del Presbiterio de la Catedral de León."
+      }
+    },
+    {
+      "id": "estatua_jesus_humildad",
+      "name": "Señor de la Humildad y Paciencia",
+      "sprite": "estatua_jesus_humildad.png",
+      "category": "floor",
+      "layer": "piso_ysort",
+      "position": { "x": 400, "y": 600 },
+      "z_index": 5,
+      "hitbox": {
+        "width": 64,
+        "height": 26,
+        "offset_x": 0,
+        "offset_y": -13
+      },
+      "interaction": {
+        "enabled": true,
+        "radius": 85.0,
+        "action_prompt": "Presiona [E] para inspeccionar",
+        "title": "Jesús de la Humildad y Paciencia",
+        "description": "Venerada talla barroca en madera policromada. Muestra a Cristo sentado, meditabundo y coronado de espinas con manto púrpura, sobre un pedestal rodeado por ofrendas de helechos y flores de la comunidad."
+      }
+    },
+    {
+      "id": "tumba_ruben_dario",
+      "name": "Tumba de Rubén Darío (León Doliente)",
+      "sprite": "tumba_ruben_dario.png",
+      "category": "floor",
+      "layer": "piso_ysort",
+      "position": { "x": 1150, "y": 550 },
+      "z_index": 5,
+      "hitbox": {
+        "width": 84,
+        "height": 30,
+        "offset_x": 0,
+        "offset_y": -15
+      },
+      "interaction": {
+        "enabled": true,
+        "radius": 90.0,
+        "action_prompt": "Presiona [E] para inspeccionar",
+        "title": "Tumba de Rubén Darío (León Doliente)",
+        "description": "Sepulcro del ilustre poeta nicaragüense, padre del Modernismo. El león de mármol doliente llora recostado sobre la bandera nacional, esculpido en 1916 al pie de la columna de San Pablo."
+      }
+    },
+    {
+      "id": "roseton_ojo_azul",
+      "name": "Rosetón Central del Ojo de la Providencia",
+      "sprite": "roseton_ojo_azul.png",
+      "category": "ceiling",
+      "layer": "techo_overlay",
+      "position": { "x": 960, "y": 540 },
+      "z_index": 12,
+      "hitbox": null,
+      "interaction": {
+        "enabled": false,
+        "action_prompt": "",
+        "title": "Rosetón de la Bóveda Mayor",
+        "description": "Medallón blanco con fondo azul cerúleo. El Ojo de la Providencia observa el templo desde lo más alto de la cúpula central."
+      }
+    },
+    {
+      "id": "cruz_ojo_rayos",
+      "name": "Cruz Radiante con el Ojo Divino",
+      "sprite": "cruz_ojo_rayos.png",
+      "category": "ceiling",
+      "layer": "techo_overlay",
+      "position": { "x": 960, "y": 800 },
+      "z_index": 12,
+      "hitbox": null,
+      "interaction": {
+        "enabled": false,
+        "action_prompt": "",
+        "title": "Relieve Cenital de la Cruz",
+        "description": "Relieve en estuco y yesería colonial que representa la Santa Cruz luminosa con el triángulo del Ojo de Dios en el crucero del templo."
+      }
+    },
+    {
+      "id": "colgante_espiritu_santo",
+      "name": "Colgante del Espíritu Santo",
+      "sprite": "colgante_espiritu_santo.png",
+      "category": "ceiling",
+      "layer": "techo_overlay",
+      "position": { "x": 800, "y": 450 },
+      "z_index": 14,
+      "hitbox": null,
+      "interaction": {
+        "enabled": false,
+        "action_prompt": "",
+        "title": "Paloma Sagrada Colgante",
+        "description": "Escultura ligera suspendida del arco toral. Una paloma blanca con alas extendidas antecede al triángulo místico resplandeciente."
+      }
+    }
+  ]
+}

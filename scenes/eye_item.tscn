@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/eye_item.gd" id="1_eye"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eye"]
+radius = 18.0
+
+[node name="EyeItem" type="Node2D"]
+z_index = 4
+script = ExtResource("1_eye")
+
+[node name="GlowLight" type="PointLight2D" parent="."]
+
+[node name="EyeSprite" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_eye")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.55
+one_shot = true
+explosiveness = 0.85
+spread = 180.0
+gravity = Vector2(0, -25)
+initial_velocity_min = 35.0
+initial_velocity_max = 70.0
+scale_amount_min = 1.0
+scale_amount_max = 2.5
+color = Color(1, 0.25, 0.35, 1)

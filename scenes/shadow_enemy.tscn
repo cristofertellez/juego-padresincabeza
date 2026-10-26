@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/shadow_enemy.gd" id="1_shadow"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/priest_frames.tres" id="2_priest_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 16.0
+
+[node name="ShadowEnemy" type="CharacterBody2D"]
+z_index = 5
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_shadow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_body")
+
+[node name="DarkLight" type="PointLight2D" parent="."]
+position = Vector2(0, -4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_priest_frames")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, -16)
+amount = 16
+lifetime = 0.65
+spread = 180.0
+gravity = Vector2(0, -15)
+initial_velocity_min = 10.0
+initial_velocity_max = 28.0
+scale_amount_min = 1.0
+scale_amount_max = 2.5
+color = Color(0.25, 0.05, 0.35, 0.7)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_hit")

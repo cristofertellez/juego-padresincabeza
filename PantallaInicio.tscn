@@ -1,0 +1,180 @@
+[gd_scene format=3 load_steps=6]
+
+[ext_resource type="Script" path="res://PantallaInicio.gd" id="1_script"]
+[ext_resource type="VideoStreamTheora" path="res://assets/fondo_menu.ogv" id="2_video"]
+[ext_resource type="Texture2D" path="res://assets/cursor_espada.png" id="3_cursor"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.0509804, 0.0509804, 0.0823529, 0.941176)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.854902, 0.690196, 0.25098, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 6
+
+[node name="PantallaInicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_video")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonNuevaPartida" type="Button" parent="."]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 336.0
+offset_right = 274.0
+offset_bottom = 356.0
+focus_neighbor_left = NodePath("../BotonOpciones")
+focus_neighbor_right = NodePath("../BotonContinuar")
+focus_next = NodePath("../BotonContinuar")
+focus_previous = NodePath("../BotonOpciones")
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+flat = true
+
+[node name="BotonContinuar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 336.0
+offset_right = 390.0
+offset_bottom = 356.0
+focus_neighbor_left = NodePath("../BotonNuevaPartida")
+focus_neighbor_right = NodePath("../BotonOpciones")
+focus_next = NodePath("../BotonOpciones")
+focus_previous = NodePath("../BotonNuevaPartida")
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+flat = true
+
+[node name="BotonOpciones" type="Button" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 336.0
+offset_right = 498.0
+offset_bottom = 356.0
+focus_neighbor_left = NodePath("../BotonContinuar")
+focus_neighbor_right = NodePath("../BotonNuevaPartida")
+focus_next = NodePath("../BotonNuevaPartida")
+focus_previous = NodePath("../BotonContinuar")
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+flat = true
+
+[node name="Cursor" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 334.0
+offset_right = 146.0
+offset_bottom = 354.0
+mouse_filter = 2
+texture = ExtResource("3_cursor")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="PanelOpciones" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -80.0
+offset_right = 130.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Titulo" type="Label" parent="PanelOpciones"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 30.0
+grow_horizontal = 2
+text = "AJUSTES"
+horizontal_alignment = 1
+
+[node name="HBoxVolumen" type="HBoxContainer" parent="PanelOpciones"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 45.0
+offset_right = 240.0
+offset_bottom = 65.0
+
+[node name="Label" type="Label" parent="PanelOpciones/HBoxVolumen"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volumen Master"
+
+[node name="HSliderVolumen" type="HSlider" parent="PanelOpciones/HBoxVolumen"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="HBoxPantalla" type="HBoxContainer" parent="PanelOpciones"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 75.0
+offset_right = 240.0
+offset_bottom = 99.0
+
+[node name="Label" type="Label" parent="PanelOpciones/HBoxPantalla"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pantalla Completa"
+
+[node name="CheckPantalla" type="CheckBox" parent="PanelOpciones/HBoxPantalla"]
+layout_mode = 2
+
+[node name="BtnVolver" type="Button" parent="PanelOpciones"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "VOLVER"

@@ -1,0 +1,22 @@
+# Godot 4+ cache & internal editor files
+.godot/
+
+# Godot 3+ cache directory
+.import/
+
+# Export presets (uncomment if you want to exclude export configs or secrets)
+# export_presets.cfg
+
+# Imported translations (Godot-generated)
+*.translation
+
+# Mono / C# specific files (if applicable)
+.mono/
+data_*/
+mono_crash.*.json
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
