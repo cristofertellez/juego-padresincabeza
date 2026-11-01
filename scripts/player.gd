@@ -132,4 +132,3 @@ func _play_anim(anim_name: String) -> void:
 	if sprite is AnimatedSprite2D:
 		if sprite.animation != anim_name or not sprite.is_playing():
 			sprite.play(anim_name)
-

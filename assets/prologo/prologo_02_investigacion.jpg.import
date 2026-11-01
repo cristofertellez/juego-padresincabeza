@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbcqdmaskyemg"
-path="res://.godot/imported/kid_clean.png-9a2967baab61b999a5065b818b4ba262.ctex"
+uid="uid://cpx88bsr2ekx"
+path="res://.godot/imported/prologo_02_investigacion.jpg-efeae182bfc4683058a2851c1247331c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/kid_clean.png"
-dest_files=["res://.godot/imported/kid_clean.png-9a2967baab61b999a5065b818b4ba262.ctex"]
+source_file="res://assets/prologo/prologo_02_investigacion.jpg"
+dest_files=["res://.godot/imported/prologo_02_investigacion.jpg-efeae182bfc4683058a2851c1247331c.ctex"]
 
 [params]
 

@@ -13,6 +13,8 @@ extends Control
 
 # Desplazamiento del cursor respecto a la esquina superior izquierda del botón
 const CURSOR_OFFSET := Vector2(-22, -2)
+const SCENE_PROLOGUE := "res://scenes/prologo_narrativo.tscn"
+const SCENE_LOADING := "res://scenes/pantalla_carga.tscn"
 const SCENE_GAME := "res://main.tscn"
 
 var buttons: Array[Button] = []
@@ -127,15 +129,15 @@ func _on_nueva_partida_pressed() -> void:
 		tw.tween_property(cursor, "scale", Vector2.ONE, 0.1)
 		await tw.finished
 	
-	if ResourceLoader.exists(SCENE_GAME):
-		get_tree().change_scene_to_file(SCENE_GAME)
+	var target_scene := SCENE_PROLOGUE if ResourceLoader.exists(SCENE_PROLOGUE) else SCENE_GAME
+	if ResourceLoader.exists(target_scene):
+		get_tree().change_scene_to_file(target_scene)
 	else:
-		push_warning("No se encontró la escena del juego en: " + SCENE_GAME)
+		push_warning("No se encontró la escena en: " + target_scene)
 
 func _on_continuar_pressed() -> void:
 	if is_in_options:
 		return
-	# Como se requiere: imprimir en consola la carga de partida
 	print("[PantallaInicio] -> Continuar: Cargando partida guardada...")
 	
 	# Efecto visual de feedback
@@ -143,6 +145,13 @@ func _on_continuar_pressed() -> void:
 		var tw := create_tween()
 		tw.tween_property(cursor, "position:x", cursor.position.x + 4.0, 0.08)
 		tw.tween_property(cursor, "position:x", cursor.position.x, 0.08)
+		await tw.finished
+	
+	var target_scene := SCENE_LOADING if ResourceLoader.exists(SCENE_LOADING) else SCENE_GAME
+	if ResourceLoader.exists(target_scene):
+		get_tree().change_scene_to_file(target_scene)
+	else:
+		push_warning("No se encontró la escena en: " + target_scene)
 
 func _on_opciones_pressed() -> void:
 	if is_in_options:

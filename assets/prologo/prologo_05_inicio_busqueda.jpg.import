@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb3ev1nk1wnn1"
-path="res://.godot/imported/jugador.png-1183925ae3c0c3993cf5a31feffbffbe.ctex"
+uid="uid://cu5cubpk2w3d0"
+path="res://.godot/imported/prologo_05_inicio_busqueda.jpg-a87feb6839c73e58b6562cca1268c95c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugador.png"
-dest_files=["res://.godot/imported/jugador.png-1183925ae3c0c3993cf5a31feffbffbe.ctex"]
+source_file="res://assets/prologo/prologo_05_inicio_busqueda.jpg"
+dest_files=["res://.godot/imported/prologo_05_inicio_busqueda.jpg-a87feb6839c73e58b6562cca1268c95c.ctex"]
 
 [params]
 

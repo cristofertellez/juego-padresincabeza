@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1bt80riujpbl"
-path="res://.godot/imported/catedral_piso.png-da2c55c74259fdfe97d34a090e60e56b.ctex"
+uid="uid://cp22yga5wq767"
+path="res://.godot/imported/prologo_04_dentro_catedral.jpg-026a31bae2c8e858af3de636643222f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/catedral_piso.png"
-dest_files=["res://.godot/imported/catedral_piso.png-da2c55c74259fdfe97d34a090e60e56b.ctex"]
+source_file="res://assets/prologo/prologo_04_dentro_catedral.jpg"
+dest_files=["res://.godot/imported/prologo_04_dentro_catedral.jpg-026a31bae2c8e858af3de636643222f8.ctex"]
 
 [params]
 

@@ -66,6 +66,9 @@ func play_defeat() -> void:
 func play_ghost() -> void:
 	play_sfx(sfx_whisper, -4.0, randf_range(0.85, 1.15))
 
+func play_pickup() -> void:
+	play_sfx(sfx_eye_collected, -2.0, 1.4)
+
 # --- Sintetizadores Procedurales ---
 
 func _create_arpeggio(freqs: Array, note_duration: float, max_amplitude: float) -> AudioStreamWAV:

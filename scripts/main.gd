@@ -7,17 +7,15 @@ var collected_eyes: int = 0
 var active_eyes: Array[EyeItem] = []
 var active_shadows: Array[ShadowEnemy] = []
 
-@onready var dungeon: DungeonBuilder = $Dungeon
+@onready var catedral: CatedralMap = $Catedral
 @onready var player: Player = $Player
 @onready var camera: GameCamera = $Camera2D
 @onready var hud: HUD = $CanvasLayer/HUD
 @onready var mouse_light: MouseLight = $MouseLight
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
-var eye_scene: PackedScene = preload("res://scenes/eye_item.tscn")
-var shadow_scene: PackedScene = preload("res://scenes/shadow_enemy.tscn")
-var landmarks_manager: ChurchLandmarksManager = null
-var ceiling_eyes: ChurchEyesDecorations = null
+var eye_scene: PackedScene = load("res://scenes/eye_item.tscn")
+var shadow_scene: PackedScene = load("res://scenes/shadow_enemy.tscn")
 
 func _ready() -> void:
 	y_sort_enabled = true
@@ -36,8 +34,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	
 	_spawn_player()
-	_spawn_ceiling_eyes()
-	_spawn_landmarks()
 	_spawn_eyes()
 	_spawn_shadows()
 	
@@ -52,20 +48,14 @@ func _ready() -> void:
 			hud.update_health(player.current_health, player.max_health)
 
 func _spawn_player() -> void:
-	if dungeon and player:
-		player.global_position = dungeon.player_spawn_pos
-
-func _spawn_ceiling_eyes() -> void:
-	ceiling_eyes = ChurchEyesDecorations.new()
-	add_child(ceiling_eyes)
-
-func _spawn_landmarks() -> void:
-	landmarks_manager = ChurchLandmarksManager.new()
-	add_child(landmarks_manager)
+	if catedral and player:
+		player.global_position = catedral.player_spawn_pos
 
 func _spawn_eyes() -> void:
 	active_eyes.clear()
-	for pos in dungeon.eye_spawn_positions:
+	if not catedral:
+		return
+	for pos in catedral.eye_spawn_positions:
 		var eye: EyeItem = eye_scene.instantiate()
 		eye.global_position = pos
 		eye.set_player(player)
@@ -75,8 +65,10 @@ func _spawn_eyes() -> void:
 
 func _spawn_shadows() -> void:
 	active_shadows.clear()
+	if not catedral:
+		return
 	# Instanciar las apariciones del Padre sin Cabeza patrullando las naves de la Catedral
-	for route in dungeon.shadow_patrol_routes:
+	for route in catedral.shadow_patrol_routes:
 		var shadow: ShadowEnemy = shadow_scene.instantiate()
 		$Entities.add_child(shadow)
 		shadow.setup(route, player)
